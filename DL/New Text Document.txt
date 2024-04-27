@@ -1,0 +1,15 @@
+g++ --version
+sudo apt install g++
+
+echo | cpp -fopenmp -dM | grep -i open
+
+sudo apt install libomp-dev
+
+g++ -fopenmp file_name.cpp
+
+./a.out
+
+nvcc file_name.cu
+
+./a.out
+
