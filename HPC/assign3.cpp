@@ -7,8 +7,7 @@ using namespace std;
 using namespace chrono;
 
 // Sequential implementation of Min, Max, Sum, and Average
-template <typename T>
-void sequentialOperations(const vector<T>& data, T& minVal, T& maxVal, T& sum, double& average) {
+void sequentialOperations(const vector<int>& data, int& minVal, int& maxVal, int& sum, double& average) {
     minVal = data[0];
     maxVal = data[0];
     sum = data[0];
@@ -20,9 +19,8 @@ void sequentialOperations(const vector<T>& data, T& minVal, T& maxVal, T& sum, d
     average = static_cast<double>(sum) / data.size();
 }
 
-// Parallel implementation of Min, Max, Sum, and Average using OpenMP reduction
-template <typename T>
-void parallelOperations(const vector<T>& data, T& minVal, T& maxVal, T& sum, double& average) {
+// Parallel implementation of Min, Max, Sum, and Average using OpenMP reduction\
+void parallelOperations(const vector<int>& data, int& minVal, int& maxVal, int& sum, double& average) {
     minVal = data[0];
     maxVal = data[0];
     sum = data[0];
