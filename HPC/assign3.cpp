@@ -7,7 +7,7 @@ using namespace std;
 using namespace chrono;
 
 // Sequential implementation of Min, Max, Sum, and Average
-void sequentialOperations(const vector<int>& data, int& minVal, int& maxVal, int& sum, double& average) {
+void sequentialOperations(vector<int>& data, int& minVal, int& maxVal, int& sum, double& average) {
     minVal = data[0];
     maxVal = data[0];
     sum = data[0];
