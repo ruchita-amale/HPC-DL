@@ -11,7 +11,7 @@ void sequentialOperations(const vector<int>& data, int& minVal, int& maxVal, int
     minVal = data[0];
     maxVal = data[0];
     sum = data[0];
-    for (size_t i = 1; i < data.size(); ++i) {
+    for (int i = 1; i < data.size(); ++i) {
         if (data[i] < minVal) minVal = data[i];
         if (data[i] > maxVal) maxVal = data[i];
         sum += data[i];
@@ -25,7 +25,7 @@ void parallelOperations(const vector<int>& data, int& minVal, int& maxVal, int& 
     maxVal = data[0];
     sum = data[0];
     #pragma omp parallel for reduction(min:minVal) reduction(max:maxVal) reduction(+:sum)
-    for (size_t i = 1; i < data.size(); ++i) {
+    for (int i = 1; i < data.size(); ++i) {
         if (data[i] < minVal) minVal = data[i];
         if (data[i] > maxVal) maxVal = data[i];
         sum += data[i];
@@ -35,9 +35,9 @@ void parallelOperations(const vector<int>& data, int& minVal, int& maxVal, int& 
 
 int main() {
     // Generate some random data
-    const size_t size = 10000000;
+    int size = 10000000;
     vector<int> data(size);
-    for (size_t i = 0; i < size; ++i) {
+    for (int i = 0; i < size; ++i) {
         data[i] = rand() % 1000;
     }
 
